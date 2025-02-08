@@ -1,12 +1,12 @@
 # PL2025
 
-## resumo
+### RESUMO
 
 Este repositório contém os TPCs realizados na UC de Processamento de Linguagens, edição 2024/25.
 
-## autor
+### AUTOR
 
 **Nome:** João Ricardo Oliveira Macedo
-**ID:** A104080
+**Número mecanográfico:** A104080
 
 ![A104080 - João Macedo](A104080.png)
