@@ -1,10 +1,10 @@
 # PL2025
 
-### resumo
+## resumo
 
 Este repositório contém os TPCs realizados na UC de Processamento de Linguagens, edição 2024/25.
 
-### autor
+## autor
 
 **Nome:** João Ricardo Oliveira Macedo
 
