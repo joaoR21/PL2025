@@ -6,7 +6,8 @@ Este repositório contém os TPCs realizados na UC de Processamento de Linguagen
 
 ### autor
 
--**Nome:** João Ricardo Oliveira Macedo
--**Número mecanográfico:** A104080
+**Nome:** João Ricardo Oliveira Macedo
+
+**Número mecanográfico:** A104080
 
 ![A104080 - João Macedo](A104080.png)
