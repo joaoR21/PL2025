@@ -10,10 +10,10 @@ Sempre que encontrar o caráter `=`, o resultado da soma é colocado na saída.
 O programa deve ser desenvolvido sem recorrer a expressões regulares.
 
 ## Resultados
-O código da solução pode ser encontrado no seguinte ficheiro: 
+O código da solução pode ser encontrado no seguinte ficheiro.  
 [somador.py](https://github.com/joaoR21/PL2025/blob/main/TPC1/somador.py)
 
-Os resultados do programa foram confirmados recorrendo a alguns exemplos.
+Os resultados do programa foram confirmados recorrendo a alguns exemplos.  
 Por exemplo, a string...
 
 ```
