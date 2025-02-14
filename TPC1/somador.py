@@ -37,7 +37,7 @@ def somador(l):
 
 def main():
     for line in sys.stdin:
-        somador(line.lower().strip())
+        somador(line.lower())
 
 if __name__ == '__main__':
     main()
