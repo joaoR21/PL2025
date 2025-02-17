@@ -26,3 +26,9 @@ produz o seguinte resultado:
 22
 120
 ```
+
+## Autor
+
+| Nome  | Número mecanográfico |  
+|-------|----------------------|  
+| João Ricardo Oliveira Macedo | A104080 |
