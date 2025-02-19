@@ -61,10 +61,11 @@ def obras_period(obras):
 def period_title_obras(obras):
     titles = {}
     for obra in obras:
-        if obra.periodo not in titles:
-            titles[obra.periodo] = []
-        else:
-            titles[obra.periodo].append(obra.nome)
+        titles.setdefault(obra.periodo,[]).append(obra.nome)
+
+    for period in titles:
+        titles[period].sort()
+
     return titles
 
 
