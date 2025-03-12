@@ -1,0 +1,14 @@
+{
+  "stock": [
+    {"cod": "A23", "nome": "água 0.5L", "quant": 10, "preco": 1.0},
+    {"cod": "B45", "nome": "sumo laranja 330ml", "quant": 12, "preco": 1.5},
+    {"cod": "C67", "nome": "coca-cola 330ml", "quant": 20, "preco": 1.2},
+    {"cod": "D89", "nome": "batatas fritas 50g", "quant": 15, "preco": 1.8},
+    {"cod": "E12", "nome": "chocolate snickers", "quant": 10, "preco": 1.5},
+    {"cod": "F34", "nome": "bolacha OREO", "quant": 7, "preco": 1.3},
+    {"cod": "G56", "nome": "red bull 250ml", "quant": 14, "preco": 2.5},
+    {"cod": "H78", "nome": "pastilha elástica", "quant": 5, "preco": 0.8},
+    {"cod": "I90", "nome": "barra de cereais", "quant": 9, "preco": 1.2},
+    {"cod": "J11", "nome": "bolachas integrais", "quant": 6, "preco": 2.0}
+  ]
+}
