@@ -1,5 +1,0 @@
-START
-    PUSHS "hello"
-    WRITES
-    WRITELN
-STOP
