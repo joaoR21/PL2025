@@ -203,6 +203,14 @@ array_access : ID LBRACKET expression RBRACKET
 empty : ε
 ```
 
+O analisador sintático reportou 6 conflitos durante a construção das tabelas de parsing. Estes conflitos e as respetivas resoluções são as seguintes:
+
+Dois conflitos são do tipo "shift/reduce". O primeiro ocorre ao processar a palavra-chave FUNCTION no início de uma secção de declarações. Neste caso, o parser opta pela ação "shift", tratando FUNCTION como parte da declaração, o que corresponde ao comportamento esperado. O segundo é o clássico problema do "dangling ELSE", em que um ELSE pode ser associado a mais do que um IF. Aqui, o parser também resolve por "shift", associando o ELSE ao IF mais próximo, que é a abordagem convencional.
+
+Os quatro conflitos restantes são do tipo "reduce/reduce". Estes resultam sobretudo de ambiguidades causadas por regras que admitem a derivação da sequência vazia (empty) na gramática. O ply resolve automaticamente estas ambiguidades, escolhendo uma das possíveis reduções com base na ordem das regras na gramática ou o lookahead.
+
+Embora o ideal seja uma gramática livre de conflitos, as estratégias de resolução tomadas pelo ply nestes casos tendem a produzir o comportamento de parsing correto para as construções típicas da linguagem Pascal.
+
 ## Análise Semântica
 
 Após a construção da AST pelo analisador sintático, passamos à fase de análise semântica. O principal objetivo desta fase é verificar a coerência e o significado do programa, garantindo que este obedece às regras de tipo da linguagem Pascal e que todas as utilizações de identificadores (variáveis, funções, etc.) se encontram válidas.
