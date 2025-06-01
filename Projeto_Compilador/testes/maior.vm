@@ -1,0 +1,55 @@
+    PUSHI 0         // aloca espaço para variável 'num1'
+    PUSHI 0         // aloca espaço para variável 'num2'
+    PUSHI 0         // aloca espaço para variável 'num3'
+    PUSHI 0         // aloca espaço para variável 'maior'
+START
+    PUSHS "Introduza o primeiro número: "
+    WRITES
+    READ
+    ATOI
+    STOREG 0        // guarda em 'num1'
+    PUSHS "Introduza o segundo número: "
+    WRITES
+    READ
+    ATOI
+    STOREG 1        // guarda em 'num2'
+    PUSHS "Introduza o terceiro número: "
+    WRITES
+    READ
+    ATOI
+    STOREG 2        // guarda em 'num3'
+    PUSHG 0         // carrega valor da variável global 'num1' (tipo integer)
+    PUSHG 1         // carrega valor da variável global 'num2' (tipo integer)
+    SUP
+    JZ IFELSE1
+    PUSHG 0         // carrega valor da variável global 'num1' (tipo integer)
+    PUSHG 2         // carrega valor da variável global 'num3' (tipo integer)
+    SUP
+    JZ IFELSE3
+    PUSHG 0         // carrega valor da variável global 'num1' (tipo integer)
+    STOREG 3        // guarda valor em 'maior'
+    JUMP IFEND4
+IFELSE3:
+    PUSHG 2         // carrega valor da variável global 'num3' (tipo integer)
+    STOREG 3        // guarda valor em 'maior'
+IFEND4:
+    JUMP IFEND2
+IFELSE1:
+    PUSHG 1         // carrega valor da variável global 'num2' (tipo integer)
+    PUSHG 2         // carrega valor da variável global 'num3' (tipo integer)
+    SUP
+    JZ IFELSE5
+    PUSHG 1         // carrega valor da variável global 'num2' (tipo integer)
+    STOREG 3        // guarda valor em 'maior'
+    JUMP IFEND6
+IFELSE5:
+    PUSHG 2         // carrega valor da variável global 'num3' (tipo integer)
+    STOREG 3        // guarda valor em 'maior'
+IFEND6:
+IFEND2:
+    PUSHS "O maior é: "
+    WRITES
+    PUSHG 3         // carrega valor da variável global 'maior' (tipo integer)
+    WRITEI
+    WRITELN
+STOP

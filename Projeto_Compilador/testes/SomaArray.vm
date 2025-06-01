@@ -1,0 +1,52 @@
+    PUSHN 5         // aloca 5 posições para array 'numeros'
+    PUSHI 0         // aloca espaço para variável 'i'
+    PUSHI 0         // aloca espaço para variável 'soma'
+START
+    PUSHI 0
+    STOREG 6        // guarda valor em 'soma'
+    PUSHS "Introduza 5 números inteiros:"
+    WRITES
+    WRITELN
+    PUSHI 1
+    STOREG 5        // ciclo FOR: inicializa 'i'
+    JUMP FORTEST2
+// corpo do ciclo for
+FORBODY1:
+    PUSHGP
+    PUSHI 0         // endereço base do array 'numeros'
+    PADD            // calcula endereço absoluto
+    PUSHG 5         // carrega valor da variável global 'i' (tipo integer)
+    PUSHI 1         // índice inicial do array
+    SUB             // calcula deslocamento
+    READ
+    ATOI
+    STOREN          // guarda em numeros[deslocamento]
+    PUSHG 6         // carrega valor da variável global 'soma' (tipo integer)
+    PUSHGP
+    PUSHI 0         // endereço base do array 'numeros'
+    PADD            // calcula endereço absoluto
+    PUSHG 5         // carrega valor da variável global 'i' (tipo integer)
+    PUSHI 1         // índice inicial do array
+    SUB             // calcula deslocamento
+    LOADN           // carrega valor do elemento do array
+    ADD
+    STOREG 6        // guarda valor em 'soma'
+    PUSHG 5
+    PUSHI 1
+    ADD
+    STOREG 5        // atualiza 'i'
+// teste do ciclo for
+FORTEST2:
+    PUSHG 5
+    PUSHI 5
+    INFEQ
+    JZ FOREND3
+    JUMP FORBODY1
+// fim do ciclo for
+FOREND3:
+    PUSHS "A soma dos números é: "
+    WRITES
+    PUSHG 6         // carrega valor da variável global 'soma' (tipo integer)
+    WRITEI
+    WRITELN
+STOP

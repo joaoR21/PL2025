@@ -1,0 +1,59 @@
+    PUSHI 0         // aloca espaço para variável 'bin'
+    PUSHI 0         // aloca espaço para variável 'i'
+    PUSHI 0         // aloca espaço para variável 'valor'
+    PUSHI 0         // aloca espaço para variável 'potencia'
+START
+    PUSHS "Introduza uma string binária:"
+    WRITES
+    WRITELN
+    READ
+    STOREG 0        // guarda em 'bin'
+    PUSHI 0
+    STOREG 2        // guarda valor em 'valor'
+    PUSHI 1
+    STOREG 3        // guarda valor em 'potencia'
+    PUSHG 0         // carrega valor da variável global 'bin' (tipo string)
+    STRLEN
+    STOREG 1        // ciclo FOR: inicializa 'i'
+    JUMP FORTEST2
+// corpo do ciclo for
+FORBODY1:
+    PUSHG 0         // carrega string 'bin'
+    PUSHG 1         // carrega valor da variável global 'i' (tipo integer)
+    PUSHI 1
+    SUB             // ajusta índice PASCAL (base 1) para VM (base 0)
+    CHARAT
+    PUSHS "1"
+    POP 1
+    PUSHI 49
+    EQUAL
+    JZ IFEND5
+    PUSHG 2         // carrega valor da variável global 'valor' (tipo integer)
+    PUSHG 3         // carrega valor da variável global 'potencia' (tipo integer)
+    ADD
+    STOREG 2        // guarda valor em 'valor'
+IFELSE4:
+IFEND5:
+    PUSHG 3         // carrega valor da variável global 'potencia' (tipo integer)
+    PUSHI 2
+    MUL
+    STOREG 3        // guarda valor em 'potencia'
+    PUSHG 1
+    PUSHI 1
+    SUB
+    STOREG 1        // atualiza 'i'
+// teste do ciclo for
+FORTEST2:
+    PUSHG 1
+    PUSHI 1
+    SUPEQ
+    JZ FOREND3
+    JUMP FORBODY1
+// fim do ciclo for
+FOREND3:
+    PUSHS "O valor inteiro correspondente é: "
+    WRITES
+    PUSHG 2         // carrega valor da variável global 'valor' (tipo integer)
+    WRITEI
+    WRITELN
+STOP
